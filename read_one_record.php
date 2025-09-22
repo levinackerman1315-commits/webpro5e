@@ -1,0 +1,62 @@
+<?php
+include 'connect.php';
+
+// $id = $_GET['id'];
+//read one record by id
+// $sql = "SELECT * FROM products WHERE id = 1";
+//read one record by name
+// $sql = "SELECT * FROM products WHERE name = 'PowerBank'";
+//read one record by price
+
+echo "<br><br>";
+
+
+$sql = "SELECT * FROM products WHERE price = 15000";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();// memungut data dengan menggunakan array asosiatif dna menyimpan di array asosiatif
+
+//view data
+// echo"Id: " . $row['id'] . "<br>";
+// echo "Product Name: " . $row['name'] . "<br>";
+// echo "Product Description: " . $row['description'] . "<br>";
+// echo "Product Price: " . $row['price'] . "<br>";
+// echo "Created : " . $row['created'] . "<br>";
+
+
+
+//view data dalam bentuk tabel
+// echo "<table>
+// <tr><th>ID</th><th>Name</th><th>Description</th><th>Prices</th><th>created</th>
+// <tr><td>" . $row['id'] . "</td> .  <tr><td>" . $row['name'] . "</td> .  <tr><td>" . $row['description'] . "</td> .  <tr><td>" . $row['price'] . "</td> .  <tr><td>" . $row['created'] . "</td> .  
+// </tr>
+// </table>";
+// tampilkan tabel
+// echo "<a href = 'form_input_product"
+echo "<table border='1' cellspacing='0' cellpadding='5'>
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Created</th>
+</tr>
+<tr>
+    <td>" . $row['id'] . "</td>
+    <td>" . $row['name'] . "</td>
+    <td>" . $row['description'] . "</td>
+    <td>" . $row['price'] . "</td>
+    <td>" . $row['created'] . "</td>
+</tr>
+</table>";
+
+// tampilkan detail teks
+echo "Id: " . $row['id'] . "<br>";
+echo "Product Name: " . $row['name'] . "<br>";
+echo "Product Description: " . $row['description'] . "<br>";
+echo "Product Price: " . $row['price'] . "<br>";
+echo "Created : " . $row['created'] . "<br>";
+
+header("Location: form_input_product.php");
+exit();
+$conn->close();
+?>
