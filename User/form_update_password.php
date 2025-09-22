@@ -24,8 +24,9 @@ $stmt->close();
   <h2>Update Password untuk <?= htmlspecialchars($username) ?></h2>
   <form action="update_password.php" method="post">
       <input type="hidden" name="id" value="<?= htmlspecialchars($id) ?>">
-      New Password: <br> <input type="password" name="new_password" required><br>
-      Confirm New Password: <br> <input type="password" name="confirm_new_password" required><br><br>
+      Password Lama: <br> <input type="password" name="old_password" required><br>
+      Password Baru: <br> <input type="password" name="new_password" required><br>
+      Konfirmasi Password Baru: <br> <input type="password" name="confirm_new_password" required><br><br>
       <input type="submit" value="Update Password">
   </form>
   <p><a href="read_all.php">Kembali</a></p>
