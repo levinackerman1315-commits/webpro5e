@@ -17,10 +17,12 @@ include 'connect.php';
 
     if ($result->num_rows > 0) {
         echo "<table border='1' cellpadding='6' cellspacing='0'>";
-        echo "<tr><th>ID</th><th>Username</th><th>Password (Encrypted)</th><th>Full Name</th><th>Registration Date</th><th>Action</th></tr>";
+        echo "<tr><th>No</th><th>ID</th><th>Username</th><th>Password (Encrypted)</th><th>Full Name</th><th>Registration Date</th><th>Action</th></tr>";
         
+         $no = 1;
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
+             echo "<td>" . $no++ . "</td>"; 
             echo "<td>" . $row['id'] . "</td>";
             echo "<td>" . $row['username'] . "</td>";
             echo "<td style='color:red; font-size:12px; font-family:monospace;'>" . $row['password'] . "</td>";
