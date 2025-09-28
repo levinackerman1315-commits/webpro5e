@@ -12,10 +12,7 @@ $mode = $user_id ? 'single' : 'list';
     <meta charset="utf-8">
     <title>Update Password</title>
     <style>
-        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
-        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .container { max-width: 100%; padding: 20px; }
     </style>
 </head>
 <body>
@@ -60,7 +57,7 @@ $mode = $user_id ? 'single' : 'list';
             $result = $conn->query($sql);
             
             if ($result->num_rows > 0) {
-                echo "<table>";
+                echo "<table border='1' cellpadding='6' cellspacing='0'>";
                 echo "<tr><th>ID</th><th>Username</th><th>Nama Lengkap</th><th>Aksi</th></tr>";
                 
                 while ($row = $result->fetch_assoc()) {

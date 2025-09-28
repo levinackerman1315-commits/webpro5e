@@ -27,8 +27,8 @@ include 'connect.php';
             echo "<td>" . $row['fullname'] . "</td>";
             echo "<td>" . $row['reg_date'] . "</td>";
             echo "<td>
-        <a href='form_update_password.php?id=" . $row['id'] . "'>Update Password</a> | 
-        <a href='delete.php?id=" . $row['id'] . "' onclick='return confirm(\"Yakin hapus?\")'>
+                    <a href='form_update_password.php?id=" . $row['id'] . "'>Update Password</a> | 
+                    <a href='delete.php?id=" . $row['id'] . "' onclick='return confirm(\"Yakin hapus user ini?\")'>Delete</a>
                   </td>";
             echo "</tr>";
         }
